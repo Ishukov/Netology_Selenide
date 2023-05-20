@@ -15,13 +15,6 @@ public class SelenideTestFirst {
     private String generateDate(int addDays, String patterns) {
         return LocalDate.now().plusDays(addDays).format(DateTimeFormatter.ofPattern(patterns));
     }
-    @BeforeEach
-    void setUp() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--headless");
-    }
     @Test
     void shouldForm() {
         open("http://localhost:9999/");
