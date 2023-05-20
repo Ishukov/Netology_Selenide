@@ -1,8 +1,6 @@
 import com.codeborne.selenide.Condition;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
 import java.time.LocalDate;
@@ -15,6 +13,7 @@ public class SelenideTestFirst {
     private String generateDate(int addDays, String patterns) {
         return LocalDate.now().plusDays(addDays).format(DateTimeFormatter.ofPattern(patterns));
     }
+
     @Test
     void shouldForm() {
         open("http://localhost:9999/");

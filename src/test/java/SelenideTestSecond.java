@@ -1,8 +1,5 @@
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
 import java.time.LocalDate;
@@ -12,18 +9,21 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class SelenideTestSecond {
     int addDays = 7;
+
     private String generateDate(String patterns) {
         return LocalDate.now().plusDays(addDays).format(DateTimeFormatter.ofPattern(patterns));
     }
+
     private boolean meetingMonthNext() {
         String currentMonth = LocalDate.now().format(DateTimeFormatter.ofPattern("MM"));
-        String defaultMonth = generateDate( "MM");
+        String defaultMonth = generateDate("MM");
         return currentMonth.equals(defaultMonth);
     }
+
     @Test
     void shouldForm() {
         open("http://localhost:9999/");
-        String currentDate = generateDate( "dd.MM.yyyy");
+        String currentDate = generateDate("dd.MM.yyyy");
         String meetingDay = generateDate("d");
         $("[data-test-id='city'] input").setValue("Ек");
         $$(".menu-item__control").find(Condition.text("Екатеринбург")).click();
