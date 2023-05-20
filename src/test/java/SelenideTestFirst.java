@@ -17,8 +17,6 @@ public class SelenideTestFirst {
 
     @Test
     void shouldForm() {
-        Configuration.holdBrowserOpen = true;
-        Configuration.browserSize = "800x900";
         open("http://localhost:9999/");
         $("[data-test-id='city'] input").setValue("Казань");
         String currentDate = generateDate(4, "dd.MM.yyyy");

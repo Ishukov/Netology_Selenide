@@ -21,8 +21,6 @@ public class SelenideTestSecond {
 
     @Test
     void shouldForm() {
-        Configuration.holdBrowserOpen = true;
-        Configuration.browserSize = "800x900";
         open("http://localhost:9999/");
         String currentDate = generateDate( "dd.MM.yyyy");
         String meetingDay = generateDate("d");
